@@ -5,13 +5,13 @@
 
         <v-alert
           v-model="alert"
-          :value="error"
           transition="scale-transition"
           origin="center center"
           icon="warning"
           dismissible
           error
         >
+          <span v-html="error"></span>
         </v-alert>
 
         <v-card>

@@ -5,11 +5,13 @@ module.exports = {
     const schema = {
       email: Joi.string().email(),
       password: Joi.string().regex(
-        new RegExp('^[a-zA-Z0-9]{8,32}$')
+        new RegExp('^.{8,72}$')
       )
     }
 
-    const {error} = Joi.validate(req.body, schema)
+    const { email, password } = req.body
+
+    const {error} = Joi.validate({email, password}, schema)
 
     if (error) {
       switch (error.details[0].context.key) {
