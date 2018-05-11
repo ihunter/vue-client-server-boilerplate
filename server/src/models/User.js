@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  User.prototype.comparePassword = function (password) {
-    return bcrypt.compareAsync(password, this.password)
+  User.prototype.comparePassword = async function (password) {
+    return await bcrypt.compare(password, this.password)
   }
 
   User.associate = function (models) {
