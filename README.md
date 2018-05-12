@@ -1,1 +1,1 @@
-# vue-tracking
+# vue-client-server-boilerplate
